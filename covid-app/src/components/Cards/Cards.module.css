@@ -1,5 +1,23 @@
-.cards {
+.container {
+	margin: 50px 0;
+}
+.card {
+	display: flex;
+
+	margin: 0 2% !important;
+}
+.infected {
 	display: flex;
 	justify-content: center;
-	background-color: green;
+	border-bottom: 10px solid rgba(255, 168, 6, 0.37);
+}
+.recovered {
+	display: flex;
+	justify-content: center;
+	border-bottom: 10px solid rgba(6, 255, 89, 0.37);
+}
+.deaths {
+	display: flex;
+	justify-content: center;
+	border-bottom: 10px solid rgba(255, 6, 6, 0.37);
 }
