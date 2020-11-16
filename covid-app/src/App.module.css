@@ -7,3 +7,18 @@ body {
 	justify-content: center;
 	flex-direction: column;
 }
+.header {
+	display: flex;
+	justify-content: center;
+}
+.header__logo {
+	max-width: 20%;
+}
+@media (max-width: 770px) {
+	.container {
+		margin: 0 10%;
+	}
+	.header__logo {
+		width: 100%;
+	}
+}
