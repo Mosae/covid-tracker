@@ -10,7 +10,6 @@ const CountryPicker = ({ handleCountryChange }) => {
 		};
 		fetchAPI();
 	}, [setFetchedCountries]);
-	console.log(fetchedCountries);
 
 	return (
 		<div className={styles.container}>

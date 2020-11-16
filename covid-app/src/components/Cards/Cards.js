@@ -31,12 +31,10 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 							/>
 						</Typography>
 						<Typography color="textSecondary">
+							<h3>Last Update:</h3>
 							{new Date(lastUpdate).toDateString()}
 						</Typography>
-						<Typography variant="body2">
-							{' '}
-							<h3>Active Cases</h3>
-						</Typography>
+						<Typography variant="body2"> </Typography>
 					</CardContent>
 				</Grid>
 				<Grid
@@ -59,11 +57,10 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 							/>
 						</Typography>
 						<Typography color="textSecondary">
+							<h3>Last Update:</h3>
 							{new Date(lastUpdate).toDateString()}
 						</Typography>
-						<Typography variant="body2">
-							<h3>Recovered Cases</h3>
-						</Typography>
+						<Typography variant="body2"></Typography>
 					</CardContent>
 				</Grid>
 				<Grid
@@ -86,12 +83,10 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 							/>
 						</Typography>
 						<Typography color="textSecondary">
+							<h3>Last Update:</h3>
 							{new Date(lastUpdate).toDateString()}
 						</Typography>
-						<Typography variant="body2">
-							{' '}
-							<h3>Death Cases</h3>
-						</Typography>
+						<Typography variant="body2"> </Typography>
 					</CardContent>
 				</Grid>
 			</Grid>

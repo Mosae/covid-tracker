@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { Cards, Chart, CountryPicker } from './components';
 import styles from './App.module.css';
+
 import { fetchData } from './api';
 class App extends React.Component {
 	state = {

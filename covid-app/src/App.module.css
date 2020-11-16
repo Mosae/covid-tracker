@@ -1,6 +1,7 @@
 body {
-	background-color: bisque;
+	background: #ecf3f3;
 }
+
 .container {
 	display: flex;
 	align-items: center;
