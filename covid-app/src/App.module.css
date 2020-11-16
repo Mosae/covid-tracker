@@ -11,14 +11,16 @@ body {
 	display: flex;
 	justify-content: center;
 }
-.header__logo {
-	max-width: 20%;
+img {
+	object-fit: contain;
+	max-width: 390px;
+	margin: 14px 0 14px 0;
 }
 @media (max-width: 770px) {
 	.container {
 		margin: 0 10%;
 	}
-	.header__logo {
+	img {
 		width: 100%;
 	}
 }
