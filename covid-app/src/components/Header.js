@@ -1,9 +1,10 @@
 import React from 'react';
-import '../css/App.css';
+import styles from '../App.module.css';
+import logo from '../images/header.png';
 function Header() {
 	return (
-		<div className="header">
-			<h1>Welcome to the Covid Tracker Application</h1>
+		<div className={styles.header}>
+			<img className="header__logo" src={logo} alt="Covid Logo" />
 		</div>
 	);
 }
