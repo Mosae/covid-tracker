@@ -10,7 +10,6 @@ const CountryPicker = ({ handleCountryChange }) => {
 		};
 		fetchAPI();
 	}, [setFetchedCountries]);
-	console.log(fetchedCountries);
 
 	return (
 		<div className={styles.container}>
@@ -20,7 +19,7 @@ const CountryPicker = ({ handleCountryChange }) => {
 					onChange={(e) => {
 						handleCountryChange(e.target.value);
 					}}>
-					<option value="global">Global</option>
+					<option value="">Global</option>
 					{fetchedCountries.map((country, i) => (
 						<option key={i} value={country}>
 							{country}

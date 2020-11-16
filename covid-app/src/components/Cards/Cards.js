@@ -10,16 +10,17 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 	}
 	return (
 		<div className={styles.container}>
-			<Grid container spacing={3} justify="center">
+			<Grid container spacing={6} justify="center">
 				<Grid
 					item
 					component={Card}
 					xs={12}
 					md={3}
+					lg={3}
 					className={cx(styles.card, styles.infected)}>
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
-							Infected
+							<h3>Active Cases</h3>
 						</Typography>
 						<Typography variant="h5">
 							<CountUp
@@ -30,9 +31,10 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 							/>
 						</Typography>
 						<Typography color="textSecondary">
+							<h3>Last Update:</h3>
 							{new Date(lastUpdate).toDateString()}
 						</Typography>
-						<Typography variant="body2"> Active Cases</Typography>
+						<Typography variant="body2"> </Typography>
 					</CardContent>
 				</Grid>
 				<Grid
@@ -40,10 +42,11 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 					component={Card}
 					xs={12}
 					md={3}
+					lg={3}
 					className={cx(styles.card, styles.recovered)}>
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
-							{new Date(lastUpdate).toDateString()}
+							<h3>Recovered Cases</h3>
 						</Typography>
 						<Typography variant="h5">
 							<CountUp
@@ -54,9 +57,10 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 							/>
 						</Typography>
 						<Typography color="textSecondary">
+							<h3>Last Update:</h3>
 							{new Date(lastUpdate).toDateString()}
 						</Typography>
-						<Typography variant="body2"> Recovery Cases</Typography>
+						<Typography variant="body2"></Typography>
 					</CardContent>
 				</Grid>
 				<Grid
@@ -64,10 +68,11 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 					component={Card}
 					xs={12}
 					md={3}
+					lg={3}
 					className={cx(styles.card, styles.deaths)}>
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
-							Deaths
+							<h3>Death Cases</h3>
 						</Typography>
 						<Typography variant="h5">
 							<CountUp
@@ -78,9 +83,10 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 							/>
 						</Typography>
 						<Typography color="textSecondary">
+							<h3>Last Update:</h3>
 							{new Date(lastUpdate).toDateString()}
 						</Typography>
-						<Typography variant="body2"> Death Cases</Typography>
+						<Typography variant="body2"> </Typography>
 					</CardContent>
 				</Grid>
 			</Grid>
