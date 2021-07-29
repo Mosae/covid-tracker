@@ -3,32 +3,21 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import styles from './Cards.module.css';
 import CountUp from 'react-countup';
 import cx from 'classnames';
+
 function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
-	console.log(lastUpdate);
 	if (!confirmed) {
 		return 'Loading...';
 	}
 	return (
 		<div className={styles.container}>
 			<Grid container spacing={6} justify="center">
-				<Grid
-					item
-					component={Card}
-					xs={12}
-					md={3}
-					lg={3}
-					className={cx(styles.card, styles.infected)}>
+				<Grid item component={Card} xs={12} md={3} lg={3} className={cx(styles.card, styles.infected)}>
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
 							<h3>Active Cases</h3>
 						</Typography>
 						<Typography variant="h5">
-							<CountUp
-								start={0}
-								end={confirmed.value}
-								duration="3"
-								separator=","
-							/>
+							<CountUp start={0} end={confirmed.value} duration="3" separator="," />
 						</Typography>
 						<Typography color="textSecondary">
 							<h3>Last Update:</h3>
@@ -37,24 +26,13 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 						<Typography variant="body2"> </Typography>
 					</CardContent>
 				</Grid>
-				<Grid
-					item
-					component={Card}
-					xs={12}
-					md={3}
-					lg={3}
-					className={cx(styles.card, styles.recovered)}>
+				<Grid item component={Card} xs={12} md={3} lg={3} className={cx(styles.card, styles.recovered)}>
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
 							<h3>Recovered Cases</h3>
 						</Typography>
 						<Typography variant="h5">
-							<CountUp
-								start={0}
-								end={recovered.value}
-								duration="3.5"
-								separator=","
-							/>
+							<CountUp start={0} end={recovered.value} duration="3.5" separator="," />
 						</Typography>
 						<Typography color="textSecondary">
 							<h3>Last Update:</h3>
@@ -63,24 +41,13 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 						<Typography variant="body2"></Typography>
 					</CardContent>
 				</Grid>
-				<Grid
-					item
-					component={Card}
-					xs={12}
-					md={3}
-					lg={3}
-					className={cx(styles.card, styles.deaths)}>
+				<Grid item component={Card} xs={12} md={3} lg={3} className={cx(styles.card, styles.deaths)}>
 					<CardContent>
 						<Typography color="textSecondary" gutterBottom>
 							<h3>Death Cases</h3>
 						</Typography>
 						<Typography variant="h5">
-							<CountUp
-								start={0}
-								end={deaths.value}
-								duration="4"
-								separator=","
-							/>
+							<CountUp start={0} end={deaths.value} duration="4" separator="," />
 						</Typography>
 						<Typography color="textSecondary">
 							<h3>Last Update:</h3>

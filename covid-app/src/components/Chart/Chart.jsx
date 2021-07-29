@@ -7,13 +7,14 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
 	const [dailyData, setDailyData] = useState({});
 
 	useEffect(() => {
-		const fetchMyAPI = async () => {
+		const fetchAPI = async () => {
+			// past daily data
 			const initialDailyData = await fetchDailyData();
 
 			setDailyData(initialDailyData);
 		};
 		// console.log('This is the daily data', dailyData);
-		fetchMyAPI();
+		fetchAPI();
 	}, []);
 	const barChart = confirmed ? (
 		<Bar
@@ -22,11 +23,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
 				datasets: [
 					{
 						label: 'People',
-						backgroundColor: [
-							'rgba(255, 168, 6, 0.37)',
-							'rgba(6, 255, 89, 0.37)',
-							'rgba(255, 6, 6, 0.37)',
-						],
+						backgroundColor: ['rgba(255, 168, 6, 0.37)', 'rgba(6, 255, 89, 0.37)', 'rgba(255, 6, 6, 0.37)'],
 						data: [confirmed.value, recovered.value, deaths.value],
 					},
 				],
@@ -41,9 +38,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
 	const lineChart = dailyData[0] ? (
 		<Line
 			data={{
-				labels: dailyData.map(({ date }) =>
-					new Date(date).toLocaleDateString()
-				),
+				labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
 				datasets: [
 					{
 						data: dailyData.map((data) => data.confirmed),
@@ -69,9 +64,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
 			}}
 		/>
 	) : null;
-	return (
-		<div className={styles.container}>{country ? barChart : lineChart}</div>
-	);
+	return <div className={styles.container}>{country ? barChart : lineChart}</div>;
 };
 
 export default Chart;
